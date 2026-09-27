@@ -1,0 +1,32 @@
+# Dependencies for the research notebooks in Re-source/
+#
+#   pip install -r requirements-notebooks.txt
+#
+# Installs everything in requirements.txt, then adds the extra packages
+# needed by Re-source/source_code*.ipynb and Re-source/Explore_data/*.ipynb.
+
+-r requirements.txt
+
+# --- Gradient boosting / ensembling -------------------------------------
+xgboost>=2.0
+catboost>=1.2
+
+# --- Imbalanced-learn: SMOTE + ImbPipeline ------------------------------
+imbalanced-learn>=0.12
+
+# --- EDA / plotting ------------------------------------------------------
+matplotlib>=3.8
+seaborn>=0.13
+
+# --- Optional dataset access --------------------------------------------
+# Every notebook imports this at the top even though the
+# fetch_ucirepo(id=45) call is commented out in the shipped versions.
+ucimlrepo>=0.0.3
+
+# --- Progress bars -------------------------------------------------------
+tqdm>=4.66
+
+# --- Explainability ------------------------------------------------------
+# Also unused: the notebooks import shap but never call it. Kept here so
+# those import lines do not raise ImportError.
+shap>=0.46

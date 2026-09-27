@@ -1,0 +1,20 @@
+# Runtime dependencies for the Streamlit app in source/app.py
+#
+#   pip install -r requirements.txt
+#
+# Pinned versions match the pre-built environment in Re-source/.venv
+# (Python 3.11.4), which is the environment the shipped .pkl was
+# serialised with. joblib refuses to load a pickle across incompatible
+# scikit-learn versions, so do not upgrade scikit-learn casually.
+
+numpy==2.4.4
+pandas==2.3.3
+scikit-learn==1.8.0
+joblib==1.5.3
+
+# Web UI
+streamlit>=1.40
+
+# Required to re-run source/source.ipynb: the preprocessing pipeline
+# reads and writes .xlsx snapshots.
+openpyxl>=3.1
